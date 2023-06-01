@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { Main } from './components/Main';
-import { Login } from './components/Login';
+import { Login } from './components/Login/Login';
 import { AllWine } from './components/AllWine';
 import { PageNotFound } from './components/PageNotFound';
 import { user } from './reducers/user';
