@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable comma-dangle */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -5,5 +6,5 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
