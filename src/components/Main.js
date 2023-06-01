@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 /* eslint-disable comma-dangle */
 /* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { API_URL } from '../utils/urls';
 
 export const Main = () => {
   // establish connection to the store items
@@ -18,7 +20,7 @@ export const Main = () => {
         'Content-Type': 'application/json',
       },
     };
-    fetch('http://localhost:8080/wines', options) // fetch is a function that sends a request to the API
+    fetch(API_URL('wines'), options) // fetch is a function that sends a request to the API
       // fetch('https://wine-bottles-api.herokuapp.com/wines', options)
       .then((res) => res.json()) // if the request is successful, we get a response and we convert it to json
       .then(
