@@ -1,3 +1,6 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 /* eslint-disable comma-dangle */
 /* eslint-disable max-len */
@@ -31,5 +34,43 @@ export const AllWine = () => {
       .catch();
   }, []);
 
-  return <div>This is the Main component</div>;
+  return <div>This is the ALL WINE component</div>;
 };
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { API_URL } from '../utils/urls';
+// // import { setWines, setLoading, setError } from '../store/wineSlice';
+
+// export const AllWine = () => {
+//   const wineItem = useSelector((store) => store.wines.items);
+//   const dispatch = useDispatch();
+
+//   useEffect(() => {
+//     fetch(API_URL('wines'), {
+//       method: 'GET',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//     })
+//       .then((res) => res.json())
+//       .then((data) => {
+//         dispatch(setWines(data.body)); // Dispatch the setWines action with the data from the response
+//       });
+//   }, []);
+
+//   return (
+//     <div>
+//       {wineItem.map((wine) => (
+//         <div key={wine._id}>
+//           <h3>{wine.name}</h3>
+//           <p>{wine.description}</p>
+//           <p>Price: ${wine.price}</p>
+//           <p>Country: {wine.country}</p>
+//           <hr />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// };

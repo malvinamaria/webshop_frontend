@@ -19,7 +19,7 @@ export const Login = () => {
   const accessToken = useSelector((store) => store.user.accessToken);
   useEffect(() => {
     if (accessToken) {
-      navigate('/');
+      navigate('/AllWine');
     }
   }, [accessToken, navigate]);
 

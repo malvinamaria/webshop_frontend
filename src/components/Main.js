@@ -3,6 +3,7 @@
 /* eslint-disable max-len */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Footer } from 'components/Footer';
 import { API_URL } from '../utils/urls';
 
 export const Main = () => {
@@ -32,5 +33,10 @@ export const Main = () => {
       .catch();
   }, []);
 
-  return <div>This is the Main component</div>;
+  return (
+    <>
+      <div>This is the Main component</div>
+      <Footer />
+    </>
+  );
 };
