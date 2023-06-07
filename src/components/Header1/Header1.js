@@ -14,10 +14,15 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { ReactComponent as Logo } from '../assets/wine_header.svg';
+import { ReactComponent as Logo } from '../../assets/wine_header.svg';
+import placeholderImage from '../../assets/w.png';
+import placeholderImage1 from '../../assets/w1.png';
+import placeholderImage2 from '../../assets/info.png';
+import placeholderImage3 from '../../assets/w2.png';
 
 const currencies = ['USD', 'SEK', 'EUR', 'PLN', 'GBP'];
 const navigation = {
+  // imageSrc: `${process.env.PUBLIC_URL}/../assets/cortese-boscopiano.png`,
   categories: [
     {
       name: 'All Wine',
@@ -25,34 +30,27 @@ const navigation = {
         {
           name: 'New Arrivals',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg',
-          imageAlt:
-            'Models sitting back to back, wearing Basic Tee in black and bone.',
+          imageSrc: placeholderImage,
+          imageAlt: 'Wine bottle.',
+          className: 'bject-scale-down',
         },
         {
-          name: 'Basic Tees',
+          name: 'Best Sellers',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg',
-          imageAlt:
-            'Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees.',
+          imageSrc: placeholderImage1,
+          imageAlt: 'Wine',
         },
         {
-          name: 'Accessories',
+          name: 'Deep Dive',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-03.jpg',
-          imageAlt:
-            'Model wearing minimalist watch with black wristband and white watch face.',
+          imageSrc: placeholderImage2,
+          imageAlt: 'Wine',
         },
         {
-          name: 'Carry',
+          name: 'Summer Collection',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-category-04.jpg',
-          imageAlt:
-            'Model opening tan leather long wallet with credit card pockets and cash pouch.',
+          imageSrc: placeholderImage3,
+          imageAlt: 'Wine',
         },
       ],
     },
@@ -62,33 +60,26 @@ const navigation = {
         {
           name: 'New Arrivals',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-01.jpg',
-          imageAlt:
-            'Hats and sweaters on wood shelves next to various colors of t-shirts on hangers.',
+          imageSrc: placeholderImage,
+          imageAlt: 'Wine',
         },
         {
           name: 'Basic Tees',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-02.jpg',
+          imageSrc: placeholderImage,
           imageAlt: 'Model wearing light heather gray t-shirt.',
         },
         {
           name: 'Accessories',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-03.jpg',
-          imageAlt:
-            'Grey 6-panel baseball hat with black brim, black mountain graphic on front, and light heather gray body.',
+          imageSrc: placeholderImage,
+          imageAlt: 'Wine',
         },
         {
           name: 'Carry',
           href: '#',
-          imageSrc:
-            'https://tailwindui.com/img/ecommerce-images/mega-menu-01-men-category-04.jpg',
-          imageAlt:
-            'Model putting folded cash into slim card holder olive leather wallet with hand stitching.',
+          imageSrc: placeholderImage,
+          imageAlt: 'Wine',
         },
       ],
     },
@@ -329,11 +320,6 @@ export const Header1 = () => {
                     <a href="#">
                       <span className="sr-only">Your Company</span>
                       <Logo className="h-8 w-auto" alt="Company name" />
-                      {/* <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt=""
-                      /> */}
                     </a>
                   </div>
 
@@ -456,11 +442,7 @@ export const Header1 = () => {
                   {/* Logo (lg-) */}
                   <a href="#" className="lg:hidden">
                     <span className="sr-only">Your Company</span>
-                    <img
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                      alt=""
-                      className="h-8 w-auto"
-                    />
+                    <Logo className="h-8 w-auto" alt="Company name" />
                   </a>
 
                   <div className="flex flex-1 items-center justify-end">
