@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/jsx-curly-newline */
 /* eslint-disable no-shadow */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -295,13 +296,13 @@ export const Header1 = () => {
 
               <div className="flex items-center space-x-6">
                 <a
-                  href="#"
+                  href="/login"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Sign in
                 </a>
                 <a
-                  href="#"
+                  href="/login"
                   className="text-sm font-medium text-white hover:text-gray-100"
                 >
                   Register
