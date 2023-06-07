@@ -5,7 +5,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Footer } from 'components/Footer';
 import { Header1 } from 'components/Header1/Header1';
-import { Placeholder } from './Placeholder';
+import { Products } from './Products';
+// import { Placeholder } from './Placeholder';
 import { API_URL } from '../utils/urls';
 
 export const Main = () => {
@@ -39,7 +40,8 @@ export const Main = () => {
     <>
       <div>This is the Main component</div>
       <Header1 />
-      <Placeholder />
+      <Products />
+      {/* <Placeholder /> */}
       <Footer />
     </>
   );
