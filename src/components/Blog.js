@@ -42,7 +42,7 @@ export const Blog = () => {
             An ancient winemaking region
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Pulia
+            Puglia
           </p>
           <p className="mt-6 text-base leading-7 text-gray-300">
             Puglia has always been considered a flourishing and fertile land for
