@@ -91,6 +91,14 @@ export const AllWine = () => {
               <p className="mt-1 text-sm italic text-gray-500">
                 {wine.description}
               </p>
+              <div className="mt-8">
+                <a
+                  href="#"
+                  className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Add to cart
+                </a>
+              </div>
             </a>
           ))}
         </div>

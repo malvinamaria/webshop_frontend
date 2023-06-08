@@ -476,7 +476,7 @@ export const Header1 = () => {
                       {/* Cart */}
                       <div className="ml-4 flow-root lg:ml-8">
                         <a
-                          href="#"
+                          href="/shoppingCart"
                           className="group -m-2 flex items-center p-2"
                         >
                           <ShoppingBagIcon
