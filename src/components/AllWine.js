@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable operator-linebreak */
@@ -43,14 +44,19 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+// import { cart } from 'reducers/cart';
 import { API_URL } from '../utils/urls';
 import { wineSlice } from '../reducers/wineSlice';
+import { addToCart } from '../reducers/cartSlice';
 // import { MyWines } from './MyWines';
 import placeholderImage from '../assets/w.png';
 
 export const AllWine = () => {
   const wineItem = useSelector((store) => store.wineSlice.items);
   const dispatch = useDispatch();
+  const handleAddToCart = (wine) => {
+    dispatch(addToCart(wine));
+  };
 
   useEffect(() => {
     fetch(API_URL('wines'), {
@@ -92,6 +98,14 @@ export const AllWine = () => {
                 {wine.description}
               </p>
               <div className="mt-8">
+                <button
+                  className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  // type="button"
+                  onClick={() => handleAddToCart({ wine })}
+                  // onClick={() => dispatch(cart.actions.addItem(wine))}
+                >
+                  add test cart
+                </button>
                 <a
                   href="#"
                   className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"

@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { ShoppingCart } from 'components/ShoppingCart';
+// import { cart } from 'reducers/cart';
+import cartReducer from 'reducers/cartSlice';
 import { Main } from './components/Main';
 import { Login } from './components/Login/Login';
 import { AllWine } from './components/AllWine';
@@ -18,6 +20,7 @@ export const App = () => {
     wines: wines.reducer,
     user: user.reducer,
     wineSlice: wineSlice.reducer,
+    cart: cartReducer,
     // 👇️ add reducers here
   });
   const store = configureStore({ reducer });

@@ -1,9 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { AllWine } from './AllWine';
 
 export const Cart = () => {
   const totalPrice = 0;
-  const products = [];
+  const products = useSelector((store) => store.cartSlice.items);
 
   return (
     <div className="cart">
