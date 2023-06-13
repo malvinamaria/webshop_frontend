@@ -6,6 +6,8 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable comma-dangle */
 import React, { Fragment, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Dialog, Popover, Tab, Transition } from '@headlessui/react';
 import {
   Bars3Icon,
@@ -14,6 +16,7 @@ import {
   ShoppingBagIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
+import { increment } from 'reducers/counterSlice';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { ReactComponent as Logo } from '../../assets/wine_header.svg';
 import placeholderImage from '../../assets/w.png';
@@ -22,6 +25,7 @@ import placeholderImage2 from '../../assets/info.png';
 import placeholderImage3 from '../../assets/w2.png';
 
 const currencies = ['USD', 'SEK', 'EUR', 'PLN', 'GBP'];
+console.log(increment);
 const navigation = {
   // imageSrc: `${process.env.PUBLIC_URL}/../assets/cortese-boscopiano.png`,
   categories: [
@@ -97,6 +101,8 @@ function classNames(...classes) {
 
 export const Header1 = () => {
   const [open, setOpen] = useState(false);
+  const counter = useSelector((state) => state.counter);
+  console.log(counter);
 
   return (
     <div className="bg-white">
@@ -483,9 +489,11 @@ export const Header1 = () => {
                             className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
                             aria-hidden="true"
                           />
-                          <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                            0
-                          </span>
+                          <Link to="/shoppingCart">
+                            <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+                              {counter}
+                            </span>
+                          </Link>
                           <span className="sr-only">
                             items in cart, view bag
                           </span>
