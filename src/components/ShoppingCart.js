@@ -1,3 +1,5 @@
+/* eslint-disable spaced-comment */
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/no-redundant-roles */
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable comma-dangle */
@@ -169,3 +171,58 @@ export const ShoppingCart = () => {
     </Transition.Root>
   );
 };
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// import React from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { removeFromCart, updateQuantity, clearCart } from '../reducers/cart';
+
+// export const ShoppingCart = () => {
+//   const cartItems = useSelector((store) => store.cart);
+//   const dispatch = useDispatch();
+
+//   const handleRemoveFromCart = (itemId) => {
+//     dispatch(removeFromCart(itemId));
+//   };
+
+//   const handleUpdateQuantity = (itemId, quantity) => {
+//     dispatch(updateQuantity({ id: itemId, quantity }));
+//   };
+
+//   const handleClearCart = () => {
+//     dispatch(clearCart());
+//   };
+
+//   return (
+//     <div>
+//       <h2>Shopping Cart</h2>
+//       {cartItems.length === 0 ? (
+//         <p>Your cart is empty.</p>
+//       ) : (
+//         <ul>
+//           {cartItems.map((item) => (
+//             <li key={item.id}>
+//               <p>{item.name}</p>
+//               <p>Price: ${item.price}</p>
+//               <p>Quantity: {item.quantity}</p>
+//               <button
+//                 type="button"
+//                 onClick={() => handleRemoveFromCart(item.id)}
+//               >
+//                 Remove
+//               </button>
+//               <input
+//                 type="number"
+//                 min="1"
+//                 value={item.quantity}
+//                 onChange={(e) => handleUpdateQuantity(item.id, e.target.value)}
+//               />
+//             </li>
+//           ))}
+//         </ul>
+//       )}
+//       <button type="button" onClick={handleClearCart}>
+//         Clear Cart
+//       </button>
+//     </div>
+//   );
+// };

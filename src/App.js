@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import { ShoppingCart } from 'components/ShoppingCart';
+import { About } from 'components/About';
+import { WineClub } from 'components/WineClub';
 import { Main } from './components/Main';
 import { Login } from './components/Login/Login';
 import { AllWine } from './components/AllWine';
@@ -41,6 +43,12 @@ export const App = () => {
               {' '}
             </Route>
             <Route path="/shoppingCart" element={<ShoppingCart />}>
+              {' '}
+            </Route>
+            <Route path="/about" element={<About />}>
+              {' '}
+            </Route>
+            <Route path="/wineClub" element={<WineClub />}>
               {' '}
             </Route>
           </Routes>
