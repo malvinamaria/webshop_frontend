@@ -92,12 +92,13 @@ export const AllWine = () => {
                 {wine.description}
               </p>
               <div className="mt-8">
-                <a
+                <button
+                  type="button"
                   href="#"
                   className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Add to cart
-                </a>
+                </button>
               </div>
             </a>
           ))}

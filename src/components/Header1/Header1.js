@@ -68,7 +68,7 @@ const navigation = {
           name: 'Basic Tees',
           href: '#',
           imageSrc: placeholderImage,
-          imageAlt: 'Model wearing light heather gray t-shirt.',
+          imageAlt: 'Wine',
         },
         {
           name: 'Accessories',
@@ -86,8 +86,8 @@ const navigation = {
     },
   ],
   pages: [
-    { name: 'Wine Club', href: '#' },
-    { name: 'About', href: '#' },
+    { name: 'Wine Club', href: '/wineClub' },
+    { name: 'About', href: '/about' },
   ],
 };
 
@@ -214,18 +214,18 @@ export const Header1 = () => {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/login"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Create an account
+                      Register
                     </a>
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/login"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
-                      Login
+                      Sign in
                     </a>
                   </div>
                 </div>

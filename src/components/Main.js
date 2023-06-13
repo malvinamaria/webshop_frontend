@@ -8,7 +8,7 @@ import { Header1 } from 'components/Header1/Header1';
 import { AllWine } from './AllWine';
 // import { Placeholder } from './Placeholder';
 import { Products } from './Products';
-import { Cart } from './Cart';
+// import { Cart } from './Cart';
 import { Blog } from './Blog';
 import { API_URL } from '../utils/urls';
 
@@ -43,7 +43,7 @@ export const Main = () => {
     <>
       {/* <div>This is the Main component</div> */}
       <Header1 />
-      <Cart />
+      {/* <Cart /> */}
       <Products />
       <Blog />
       <AllWine />
