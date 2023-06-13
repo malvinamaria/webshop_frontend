@@ -7,49 +7,18 @@
 /* eslint-disable no-undef */
 /* eslint-disable comma-dangle */
 /* eslint-disable max-len */
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { API_URL } from '../utils/urls';
-
-// export const AllWine = () => {
-//   const wineItem = useSelector((store) => store.wines.items); // store.wines.items is the path to the items array in the store
-//   console.log('wineItem:', wineItem);
-//   const dispatch = useDispatch(); // dispatch is a function we can use to send actions to the store
-//   console.log('dispatch:', dispatch);
-
-//   useEffect(() => {
-//     // useEffect hook is used to get stuff from the backend
-//     const options = {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     };
-//     fetch(API_URL('wines'), options) // fetch is a function that sends a request to the API
-//       // fetch('https://wine-bottles-api.herokuapp.com/wines', options)
-//       .then((res) => res.json()) // if the request is successful, we get a response and we convert it to json
-//       .then(
-//         (data) => {
-//           // if the conversion to json is successful, we get the data inside the response
-//           console.log('Success:', data);
-//         } // dispatch the action with the data from the response
-//       )
-//       .catch();
-//   }, []);
-
-//   return <div>This is the ALL WINE component</div>;
-// };
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { API_URL } from '../utils/urls';
 import { wineSlice } from '../reducers/wineSlice';
+import { increment } from '../reducers/counterSlice';
 // import { MyWines } from './MyWines';
 import placeholderImage from '../assets/w.png';
 
 export const AllWine = () => {
   const wineItem = useSelector((store) => store.wineSlice.items);
+  const counter = useSelector((state) => state.counter);
+  console.log(counter);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -91,14 +60,25 @@ export const AllWine = () => {
               <p className="mt-1 text-sm italic text-gray-500">
                 {wine.description}
               </p>
+              {/* <div>COUNTER</div>
+              <div>{counter}</div> */}
               <div className="mt-8">
                 <button
                   type="button"
                   href="#"
+                  onClick={() => dispatch(increment())}
                   className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   Add to cart
                 </button>
+                {/* <button
+                  type="button"
+                  href="#"
+                  onClick={() => dispatch(decrement())}
+                  className="inline-flex rounded-md bg-black/10 px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  Remove from cart
+                </button> */}
               </div>
             </a>
           ))}
@@ -107,48 +87,3 @@ export const AllWine = () => {
     </div>
   );
 };
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// import React, { useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { API_URL } from '../utils/urls';
-// import { wineSlice } from '../reducers/wineSlice';
-// import { MyWines } from './MyWines';
-
-// export const AllWine = () => {
-//   const wineItem = useSelector((store) => store.wineSlice.items);
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     fetch(API_URL('wines'), {
-//       method: 'GET',
-//       headers: {
-//         'Content-Type': 'application/json',
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         dispatch(wineSlice.actions.setWines(data.body));
-//         console.log(wineItem);
-//       });
-//   }, [dispatch, wineItem.length]);
-//   if (wineItem.length === 0) {
-//     return <div>Loading...</div>;
-//   }
-//   return (
-//     <div>
-//       <MyWines />
-//       {/* wineItem.length > 0 && */}
-//       {wineItem.map((wine) => (
-//         <div key={wine._id}>
-//           <h3>{wine._id}</h3>
-//           <h3>{wine.name}</h3>
-//           <p>{wine.description}</p>
-//           <p>Price: ${wine.price}</p>
-//           <p>Country: {wine.country}</p>
-//           <hr />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };

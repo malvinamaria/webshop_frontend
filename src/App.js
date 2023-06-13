@@ -14,12 +14,14 @@ import { PageNotFound } from './components/PageNotFound';
 import { user } from './reducers/user';
 import { wines } from './reducers/wines';
 import { wineSlice } from './reducers/wineSlice';
+import counterReducer from './reducers/counterSlice';
 
 export const App = () => {
   const reducer = combineReducers({
     wines: wines.reducer,
     user: user.reducer,
     wineSlice: wineSlice.reducer,
+    counter: counterReducer,
     // 👇️ add reducers here
   });
   const store = configureStore({ reducer });
