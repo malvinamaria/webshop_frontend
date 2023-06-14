@@ -11,11 +11,11 @@ const navigation = {
     { name: 'Analytics', href: '#' },
   ],
   support: [
-    { name: 'Pricing', href: '#' },
+    { name: 'Get in touch', href: '/getInTouch' },
     { name: 'Documentation', href: '#' },
   ],
   company: [
-    { name: 'About', href: '#' },
+    { name: 'About', href: '/about' },
     { name: 'Blog', href: '#' },
   ],
   legal: [

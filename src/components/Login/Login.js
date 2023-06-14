@@ -9,8 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { user } from 'reducers/user';
 import { API_URL } from 'utils/urls';
 import { ReactComponent as Logo } from '../../assets/wine_header.svg';
-
-// import './Login.css';
+import { Notification } from '../Notification';
 
 export const Login = () => {
   const [username, setUsername] = useState('');
@@ -19,9 +18,12 @@ export const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const accessToken = useSelector((store) => store.user.accessToken);
+  const [notificationVisible, setNotificationVisible] = useState(false);
+  console.log(notificationVisible);
+
   useEffect(() => {
     if (accessToken) {
-      navigate('/AllWine');
+      navigate('/welcome');
     }
   }, [accessToken, navigate]);
 
@@ -43,6 +45,7 @@ export const Login = () => {
           dispatch(user.actions.setUsername(data.response.username));
           dispatch(user.actions.setUserId(data.response.id));
           dispatch(user.actions.setError(null));
+          setNotificationVisible(true);
         } else {
           dispatch(user.actions.setAccessToken(null));
           dispatch(user.actions.setUsername(null));
@@ -54,64 +57,16 @@ export const Login = () => {
   return (
     <>
       {/* <label htmlFor="register">Register</label>
-      <input
-        type="radio"
-        id="register"
-        checked={mode === 'register'}
-        onChange={() => setMode('register')}
-      />
-      <label htmlFor="login">Login</label>
-      <input
-        type="radio"
-        id="login"
-        checked={mode === 'login'}
-        onChange={() => setMode('login')}
-      />
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <div>
-          <button type="submit">Submit</button>
-        </div>
       </form> */}
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Logo className="mx-auto h-10 w-auto" alt="Company name" />
+          <a href="/" className="-m-1.5 p-1.5">
+            <Logo className="mx-auto h-10 w-auto" alt="Company name" />
+          </a>
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
           </h2>
         </div>
-
-        {/* <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member? <label htmlFor="register">Register</label>
-          <input
-            type="radio"
-            id="register"
-            checked={mode === 'register'}
-            onChange={() => setMode('register')}
-          />
-        </p>
-        <p className="mt-10 text-center text-sm text-gray-500">
-          Already a member? <label htmlFor="register">Login</label>
-          <input
-            type="radio"
-            id="register"
-            checked={mode === 'register'}
-            onChange={() => setMode('register')}
-          />
-        </p> */}
         <p className="mt-10 text-center text-sm text-gray-500">
           <label
             className="block text-sm font-medium leading-6 text-gray-900"
@@ -208,6 +163,9 @@ export const Login = () => {
               </button>
             </div>
           </form>
+          {notificationVisible && (
+            <Notification setNotificationVisible={setNotificationVisible} />
+          )}
         </div>
       </div>
     </>
