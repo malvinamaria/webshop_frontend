@@ -7,6 +7,8 @@ import { Provider } from 'react-redux';
 import { ShoppingCart } from 'components/ShoppingCart';
 import { About } from 'components/About';
 import { WineClub } from 'components/WineClub';
+import { GetInTouch } from 'components/GetInTouch';
+import { Welcome } from 'components/Welcome';
 import { Main } from './components/Main';
 import { Login } from './components/Login/Login';
 import { AllWine } from './components/AllWine';
@@ -51,6 +53,12 @@ export const App = () => {
               {' '}
             </Route>
             <Route path="/wineClub" element={<WineClub />}>
+              {' '}
+            </Route>
+            <Route path="/getInTouch" element={<GetInTouch />}>
+              {' '}
+            </Route>
+            <Route path="/welcome" element={<Welcome />}>
               {' '}
             </Route>
           </Routes>
